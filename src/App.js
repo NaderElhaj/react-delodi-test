@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchForm from "./components/molecules/SearchForm";
+import LoginForm from "./components/molecules/LoginForm";
+import Error from "./components/atoms/Error";
 function App() {
+  const [display,setDisplay]=useState('d-none')
+  useEffect(() => {
+    setTimeout(()=>{
+      setDisplay('d-bloc')
+    },10000)
+  })
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Error display={display} />
+      <SearchForm />
+      <LoginForm />
+    </>
+    
   );
 }
 
