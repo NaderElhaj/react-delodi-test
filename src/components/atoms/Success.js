@@ -12,7 +12,7 @@ function Success({display,setDisplay}) {
     },[display])
   return (
     <>
-            <Alert color='success' className={`${display}`} >I am a local success wich closes automatically</Alert>
+            <Alert color='success' className={`${display} `}  >I am a local success wich closes automatically</Alert>
 
     </>
   )

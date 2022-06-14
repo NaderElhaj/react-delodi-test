@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {UncontrolledAlert} from 'reactstrap'
-function Error({display}) {
-
+function Error() {
+    const [display,setDisplay]=useState('d-none')
+    useEffect(() => {
+      setTimeout(()=>{
+        setDisplay('d-bloc')
+      },10)
+    })
     
   return (
     <>
-        <UncontrolledAlert color='danger relative' className={`${display}`}
+        <UncontrolledAlert color='danger ' className={`${display} `} style={{width:"300px",position:"absolute",top:"10px",right:"20px"}}
         >I am a global Error wich closes manually  </UncontrolledAlert>
 
     </>

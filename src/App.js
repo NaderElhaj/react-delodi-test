@@ -4,18 +4,15 @@ import SearchForm from "./components/molecules/SearchForm";
 import LoginForm from "./components/molecules/LoginForm";
 import Error from "./components/atoms/Error";
 function App() {
-  const [display,setDisplay]=useState('d-none')
-  useEffect(() => {
-    setTimeout(()=>{
-      setDisplay('d-bloc')
-    },10000)
-  })
+
   
   return (
     <>
-      <Error display={display} />
+      <Error  />
+    <div className="d-flex vh-100 justify-content-center align-items-center relative justify-content-evenly ">
       <SearchForm />
       <LoginForm />
+    </div>
     </>
     
   );
